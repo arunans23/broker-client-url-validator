@@ -31,11 +31,12 @@
                             <div class="col-sm-12">
                                 <input type="etextmail" class="form-control mb-4" id="url" placeholder="URL" name="url" ng-model="urlToValidate">
                                 <h6 class="error" ng-if="!urlCheckvalid"> Error: Invalid url</h6>
+                                <h6 class="success" ng-if="urlCreateValid && urlToValidate && checked">Valid URL</h6>
                             </div>
                         </div>
 
                         <div class="col-md-12 text-center">
-                            <button class="btn btn-info" ng-click="validateURL(urlToValidate, 'check')">Validate URL</button>
+                            <button class="btn btn-info" ng-click="validateURL(urlToValidate, 'check'); checked=true">Validate URL</button>
                         </div>
                     </form>
                 </div>
@@ -84,10 +85,10 @@
                         </div>
 
                         <div class="col-md-12 text-center">
-                            <button class="btn btn-info" ng-click="validateURL(urlTest, 'create'); checked=true">Generate</button>
+                            <button class="btn btn-info" ng-click="validateURL(urlTest, 'create'); created=true">Generate</button>
                         </div>
                         <h6 class="error" ng-if="!urlCreateValid"> Error: Invalid url</h6>
-                        <p ng-model="urlTest" ng-if="urlCreateValid && (pwd && ip && port && username) && checked">URL: amqp://{{username}}:{{pwd}}@clientid/carbon?brokerlist='tcp://{{ip}}:{{port}}'</p>
+                        <p ng-model="urlTest" ng-if="urlCreateValid && (pwd && ip && port && username) && created">URL: amqp://{{username}}:{{pwd}}@clientid/carbon?brokerlist='tcp://{{ip}}:{{port}}'</p>
                     </form>
                 </div>
             </div>
