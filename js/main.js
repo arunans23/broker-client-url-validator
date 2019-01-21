@@ -21,7 +21,7 @@ app.controller('urlValidator', function($scope) {
             if (flag === "create"){
                 $scope.urlCreateValid = false;
             } else if (flag === "check"){
-                $scope.urlCheckvalid = false;
+                $scope.urlCheckValid = false;
             }
             $scope.valid = false;
             return false;
