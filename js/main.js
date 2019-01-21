@@ -9,8 +9,6 @@ app.controller('urlValidator', function($scope) {
     var url = "amqp://"+$scope.username+":"+$scope.pwd+"@clientid/carbon?brokerlist='tcp://"+$scope.ip+":"+$scope.port+"'";
 
     $scope.validateURL = function(url, flag) {
-        
-        console.log("Check");
         var url = url;
 
         var regex = /^amqp:\/\/[\w.]+:[\w.]+@clientID\/carbon\?brokerlist='tcp:\/\/[\w.]+:[0-9]+'/;
