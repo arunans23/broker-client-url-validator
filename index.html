@@ -30,8 +30,8 @@
                         <div class="form-group">
                             <div class="col-sm-12">
                                 <input type="etextmail" class="form-control mb-4" id="url" placeholder="URL" name="url" ng-model="urlToValidate">
-                                <h6 class="error" ng-if="!urlCheckvalid"> Error: Invalid url</h6>
-                                <h6 class="success" ng-if="urlCreateValid && urlToValidate && checked">Valid URL</h6>
+                                <h6 class="error" ng-if="!urlCheckValid"> Error: Invalid url</h6>
+                                <h6 class="success" ng-if="urlCheckValid && urlToValidate && checked">Valid URL</h6>
                             </div>
                         </div>
 

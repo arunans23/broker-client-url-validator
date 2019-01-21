@@ -3,7 +3,7 @@ var app = angular.module('urlApp', []);
 
 app.controller('urlValidator', function($scope) {
 
-    $scope.urlCheckvalid = true;
+    $scope.urlCheckValid = true;
     $scope.urlCreateValid = true;
 
     var url = "amqp://"+$scope.username+":"+$scope.pwd+"@clientid/carbon?brokerlist='tcp://"+$scope.ip+":"+$scope.port+"'";
