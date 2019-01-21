@@ -21,10 +21,10 @@ app.controller('urlValidator', function($scope) {
             } else if (flag === "check"){
                 $scope.urlCheckValid = false;
             }
-            $scope.valid = false;
             return false;
+        } else {
+            $scope.urlCheckValid = true;
+            $scope.urlCreateValid = true;
         }
-    
-        alert("URL is valid!!!");
     };
 });
