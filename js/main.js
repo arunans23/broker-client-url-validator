@@ -6,7 +6,7 @@ app.controller('urlValidator', function($scope) {
     $scope.urlCheckValid = true;
     $scope.urlCreateValid = true;
 
-    var url = "amqp://"+$scope.username+":"+$scope.pwd+"@clientid/carbon?brokerlist='tcp://"+$scope.ip+":"+$scope.port+"'";
+    
 
     $scope.validateURL = function(url, flag) {
         var url = url;
@@ -25,6 +25,15 @@ app.controller('urlValidator', function($scope) {
         } else {
             $scope.urlCheckValid = true;
             $scope.urlCreateValid = true;
+            return true;
         }
     };
+
+    $scope.createUrl = function(username, pwd, ip, port) {
+        var url = "amqp://"+username+":"+pwd+"@clientID/carbon?brokerlist='tcp://"+ip+":"+port+"'";
+
+        if($scope.validateURL(url, "create")){
+            $scope.createdUrl = url;
+        }
+    }
 });

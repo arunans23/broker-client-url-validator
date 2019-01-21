@@ -85,10 +85,10 @@
                         </div>
 
                         <div class="col-md-12 text-center">
-                            <button class="btn btn-info" ng-click="validateURL(urlTest, 'create'); created=true">Generate</button>
+                            <button class="btn btn-info" ng-click="createUrl(username, pwd, ip, port); created=true">Generate</button>
                         </div>
                         <h6 class="error" ng-if="!urlCreateValid"> Error: Invalid url</h6>
-                        <p ng-model="urlTest" ng-if="urlCreateValid && (pwd && ip && port && username) && created">URL: amqp://{{username}}:{{pwd}}@clientid/carbon?brokerlist='tcp://{{ip}}:{{port}}'</p>
+                        <p ng-show="urlCreateValid && pwd && ip && port && username && created">URL: {{createdUrl}}</p>
                     </form>
                 </div>
             </div>
