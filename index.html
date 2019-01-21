@@ -1,38 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>URL Validator</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-</head>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 text-center" >
-            <label for="url">URL</label>
-            <input type="text" value="" name="url" id="url" class="form-control">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6 text-center">
-            <button class="btn btn-info" onclick="validateURL()">Validate URL</button>
-        </div>
-    </div>
-</div>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 
-<script src="src/js/main.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div ng-app="">
+        <div class="container">
+
+                <br/><br/>
+            <div class="row">
+
+                <div class="col-sm-12 card">
+                    <form class="form-horizontal p-5">
+
+                        <p class="h4 mb-4">Validate URL</p>
+
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input type="etextmail" class="form-control mb-4" id="url" placeholder="URL" name="url">
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-info" onclick="validateURL()">Validate URL</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <br/><br/>
+
+            <h3 class="text-center">or</h3>
+
+            <br/><br/>
+
+            <div class="row">
+                <div class="col-sm-12 card">
+                    <form class="form-horizontal p-5">
+
+                        <p class="h4 mb-4">Create URL</p>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Username:</label>
+                            <div class="col-sm-12">
+                                <input type="etextmail" class="form-control mb-4" id="email" placeholder="Enter admin username"
+                                    name="username" ng-model="username">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="pwd">Password:</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="pwd" placeholder="Enter admin password"
+                                    name="pwd" ng-model="pwd">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="pwd">Broker URL:</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="pwd" placeholder="Enter local IP" name="ip"
+                                    ng-model="ip">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="pwd">Port:</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="pwd" placeholder="Enter Port" name="port"
+                                    ng-model="port">
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-info">Create</button>
+                        </div>
+                        <p>URL: amqp://{{username}}:{{pwd}}@clientid/carbon?brokerlist='tcp://{{ip}}:{{port}}'</p>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="src/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
 </body>
+
 </html>
